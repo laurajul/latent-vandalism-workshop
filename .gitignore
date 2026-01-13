@@ -1,3 +1,4 @@
 data/models
+data/embeddings
 notebooks/models
 misc/credentials
