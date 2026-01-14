@@ -19,15 +19,11 @@ This **counterfactual, gently adversarial approach** positions productive damage
 
 ## Workshop Overview
 
-### The Problem with Perfect
 
-Modern text-to-image models have become exceptionally good at producing exactly what they're supposed to: coherent, aesthetically pleasing, commercially viable images. But this polish comes at a cost. These models have been trained and tuned to reproduce **template culture**—standardized visual languages that feel increasingly homogeneous.
-
-When every generated image is optimized for visual coherence and consumer appeal, we lose something valuable: the **epistemic weirdness** that reveals how these systems actually work.
 
 ### Productive Damage as Method
 
-This workshop takes a different approach. Instead of trying to get the "best" results, we're interested in **productive damage**—deliberate interventions that make the system fail in interesting ways. By breaking things carefully, we can:
+Instead of trying to get the "best" results, we're interested in **productive damage**—deliberate interventions that make the system fail in interesting ways. By breaking things carefully, we can:
 
 - **Surface hidden assumptions** about what images "should" look like
 - **Reveal the training data's bias** toward certain visual patterns
