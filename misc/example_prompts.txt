@@ -6,6 +6,18 @@ a mute swan
 a great horned owl
 
 
+# CLIP prompts (up to 77 tokens) - focused descriptions with camera specs
+a kingfisher with iridescent turquoise and cobalt blue plumage, bright orange breast feathers, and white throat patch, perched on a branch. Captured with Canon EOS R5 and 600mm f/4 lens at f/4, creating creamy bokeh background. Soft natural lighting highlights metallic sheen on feathers.
+
+a green-winged macaw displaying emerald wing coverts, scarlet red face and breast, yellow and turquoise facial markings, and powerful curved grey beak. Photographed with Nikon D850 and 500mm f/5.6 lens at f/5.6, producing silky smooth bokeh background in diffused natural light.
+
+a european robin with russet-orange breast and face, white lower belly, grey-brown upperparts, and large dark eyes. Captured with Sony α7R V and 400mm f/2.8 lens at f/2.8, creating ethereal bokeh separation with soft morning lighting on delicate form.
+
+a mute swan with pristine white plumage, orange bill with black knob, black facial markings, and gracefully curved neck. Photographed with Canon EOS R3 and 800mm f/5.6 lens at f/5.6, producing beautiful bokeh compression with even natural lighting revealing cream undertones.
+
+a great horned owl with prominent ear tufts, mottled brown plumage, piercing yellow-orange eyes, white throat patch, and intricate facial disc patterns. Captured with Nikon Z9 and 600mm f/4 lens at f/4, creating spectacular bokeh with soft directional natural light.
+
+
 # T5-XXL prompts (up to 512 tokens) - detailed descriptions with camera specs
 a kingfisher perched on a weathered branch, captured with a Canon EOS R5 paired with EF 600mm f/4L IS III USM lens at f/4, ISO 800, 1/1000s shutter speed, creating a creamy bokeh background. The bird's iridescent turquoise and cobalt blue plumage shimmers in soft natural light, each feather edge catching subtle highlights. Its bright orange breast feathers display fine barring patterns, while the white throat patch contrasts sharply. The long, dagger-like black beak appears razor-sharp. Crown feathers show deep blue-green metallic sheen with individual rachis visible. Wing coverts display intricate patterns of azure and teal spots. The eye is dark and alert with a slight catchlight. Soft golden hour lighting wraps around the subject from the side, creating gentle shadows that define the bird's compact rounded body shape. Background melts into soft circular bokeh orbs in warm amber and cool green tones, completely defocused at the wide f/4 aperture setting.
 
@@ -17,14 +29,3 @@ a mute swan gliding gracefully on calm water, photographed with Canon EOS R3 and
 
 a great horned owl perched majestically on a thick branch, captured with Nikon Z9 and NIKKOR Z 600mm f/4 TC VR S lens at f/4, ISO 1000, 1/640s, producing spectacular bokeh. The owl's distinctive ear tufts stand prominently upward, showing dark brown and tawny barring patterns on individual feathers. The facial disc displays intricate patterns of buff, brown, and white feathers radiating outward from the piercing yellow-orange eyes. Each eye shows incredible detail with the dark pupil and vibrant iris color enhanced by catchlights. White throat patch appears bright and fluffy. The heavily mottled plumage shows complex patterns of dark brown, russet, buff, and cream creating exceptional camouflage texture. Breast feathers display fine horizontal barring, each mark precisely edged. Wing coverts show spotted and barred patterns with remarkable intricacy. The powerful yellow talons grip the branch, each talon and scale visible. Soft directional natural light from the side reveals the three-dimensional quality of the facial disc and creates subtle shadows that emphasize the owl's powerful, robust build. Background renders as smooth bokeh in muted forest tones of soft greens and browns, with no distracting detail at the wide f/4 aperture.
 
-
-# CLIP prompts (up to 77 tokens) - focused descriptions with camera specs
-a kingfisher with iridescent turquoise and cobalt blue plumage, bright orange breast feathers, and white throat patch, perched on a branch. Captured with Canon EOS R5 and 600mm f/4 lens at f/4, creating creamy bokeh background. Soft natural lighting highlights metallic sheen on feathers.
-
-a green-winged macaw displaying emerald wing coverts, scarlet red face and breast, yellow and turquoise facial markings, and powerful curved grey beak. Photographed with Nikon D850 and 500mm f/5.6 lens at f/5.6, producing silky smooth bokeh background in diffused natural light.
-
-a european robin with russet-orange breast and face, white lower belly, grey-brown upperparts, and large dark eyes. Captured with Sony α7R V and 400mm f/2.8 lens at f/2.8, creating ethereal bokeh separation with soft morning lighting on delicate form.
-
-a mute swan with pristine white plumage, orange bill with black knob, black facial markings, and gracefully curved neck. Photographed with Canon EOS R3 and 800mm f/5.6 lens at f/5.6, producing beautiful bokeh compression with even natural lighting revealing cream undertones.
-
-a great horned owl with prominent ear tufts, mottled brown plumage, piercing yellow-orange eyes, white throat patch, and intricate facial disc patterns. Captured with Nikon Z9 and 600mm f/4 lens at f/4, creating spectacular bokeh with soft directional natural light.
