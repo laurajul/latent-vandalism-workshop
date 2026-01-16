@@ -1,1 +1,1 @@
-data/models
+../_shared/notebooks/models/
