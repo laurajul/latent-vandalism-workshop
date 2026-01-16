@@ -4,5 +4,9 @@ data/embeddings/T5
 misc/credentials
 notebooks/ARCHIVE
 misc/paths
+<<<<<<< HEAD
 data/grids
 output/images
+=======
+output
+>>>>>>> ff16291537fa403c0c6bfea74a69814cdb51d448
