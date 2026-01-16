@@ -1,5 +1,6 @@
 data/models
 notebooks/models
+data/embeddings/T5
 misc/credentials
 notebooks/ARCHIVE
 misc/paths
