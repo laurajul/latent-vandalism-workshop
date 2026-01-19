@@ -59,7 +59,7 @@ As Rosa Menkman argues in glitch studies, glitches aren't just errors—they're 
 
 ### JSON Embedding Format
 
-Embeddings are saved with the following structure:
+Embeddings are saved with the following structure, so we can peek in:
 
 ```json
 {
@@ -72,32 +72,6 @@ Embeddings are saved with the following structure:
 }
 ```
 
-
-
 ---
 
-## License
-
-This workshop material is released under [MIT License](LICENSE). Model weights and checkpoints follow their respective licenses (SD 3.5, FLUX-Schnell).
-
----
-
-## Contact
-
-**Laura Wagner**
-
-- 🌐 Website: [laurajul.github.io](https://laurajul.github.io/)
-- 📧 Contact via website or GitHub issues
-- 💬 Questions, feedback, and collaborations welcome
-
----
-
-## Acknowledgments
-
-This workshop builds on:
-- The diffusion model research community
-- Open source implementations in `diffusers` and `transformers`
-- Critical AI studies and glitch aesthetics scholarship
-
----
 
