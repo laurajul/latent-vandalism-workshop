@@ -55,6 +55,55 @@ As Rosa Menkman argues in glitch studies, glitches aren't just errors—they're 
 
 ---
 
+## ☁️ Running on Google Colab
+
+The `notebooks/` folder above is the original setup for a shared university cluster (a shared `venv`
+and a shared model folder, everyone with their own workspace, both FLUX-Schnell and SD3.5 Medium).
+`notebooks_colab/` is a **FLUX.1-schnell-only** edition adapted for a free **Colab T4 GPU**, condensed
+into a single notebook:
+
+- **One model, one notebook**: a personal Google Drive has a 15GB free-tier cap, which doesn't fit
+  two full model families the way the cluster's shared filesystem does — so this edition drops SD3.5
+  and focuses on FLUX. T5-XXL embeddings, CLIP-L embeddings, embedding vandalism, FLUX inference, and
+  the scaling animation are all sections of **one notebook** (`00_complete_workshop.ipynb`) instead of
+  seven separate ones, so T5-XXL and CLIP-L are loaded exactly **once** per session and reused by
+  every later section — instead of each notebook downloading and saving its own private copy (that
+  duplication, ~6GB of T5-XXL alone × 3, was what blew past the 15GB quota in an earlier draft).
+- **Precision**: T5-XXL and the FLUX transformer are loaded **4-bit quantized (NF4)**; everywhere the
+  cluster version used `bfloat16`, this uses `float16` — the T4 (Turing) has no bfloat16 tensor cores.
+- **Shared models, without a shared filesystem**: the workshop organizer runs
+  `00_instructor_model_prep.ipynb` once ahead of time to download, quantize, and dedupe everything
+  (~13.5GB total) into their own Drive, then shares that folder read-only. Each participant's notebook
+  links it into their own Drive as a shortcut and mounts it — the closest Colab equivalent of the
+  cluster's shared model folder. Participants' own embeddings/outputs go to their own private Drive
+  folder, just like their own cluster workspace.
+
+| Notebook | |
+|---|---|
+| `00_instructor_model_prep.ipynb` *(organizer runs once, before the workshop)* | runs in Colab |
+| `00_instructor_model_prep_local.ipynb` *(same, for non-Colab hardware — see below)* | plain Jupyter notebook |
+| `00_complete_workshop.ipynb` *(what participants run)* | runs in Colab |
+
+Loading + quantizing the FLUX transformer on a T4 is tight enough that it can OOM depending on what
+else Colab has going on. If `00_instructor_model_prep.ipynb` doesn't get through cleanly,
+`00_instructor_model_prep_local.ipynb` does the identical prep on any machine with more GPU headroom
+(24GB+) — a lab workstation, a rented instance, whatever's available — and saves locally instead of to
+Drive; its last section walks through getting that folder into Drive afterward.
+
+**Organizer setup, once:**
+1. Open `00_instructor_model_prep.ipynb`, run all cells (needs a HF token as a Colab
+   secret — the notebook explains where). If it OOMs, use `00_instructor_model_prep_local.ipynb` on
+   other hardware instead.
+2. Share the resulting Drive folder ("Anyone with the link → Viewer"), copy the link.
+3. Paste that link as `SHARED_FOLDER_LINK` in the "Colab Setup" section of `00_complete_workshop.ipynb`
+   (or just tell participants the link and have them paste it in themselves).
+
+**Participants:** open `00_complete_workshop.ipynb`, run the "Colab Setup" cells at the top, then work
+through the sections top to bottom — same content as the cluster version's T5/CLIP/vandalism/FLUX
+notebooks, just condensed into one file and running on FLUX-Schnell alone.
+
+---
+
 
 
 ### JSON Embedding Format

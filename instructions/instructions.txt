@@ -1,0 +1,17 @@
+write an instructions md.
+
+welcome the participants.
+they should click on the link to the google colab notebook.
+here is the link: https://drive.google.com/file/d/1J6XY1VGyc1O8ZMFxwsFd-gLhOE6yVupR/view?usp=sharing
+
+if they don't have google colab installed, they should install google colab. explain and also put install google_colab.webp
+
+divider
+
+in the workshop (well do this together tomorrow)
+basically they should grant all permissions that pop up
+so first this_notebook_was_not_athored....
+then permit_this_notebook_to_acccess filaments
+and then check_all_the_permissions_when adding the folder.
+
+make this a github pages page and create the necessary workflow.

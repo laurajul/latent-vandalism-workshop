@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latent Vandalism — Workshop Access</title>
+<meta name="description" content="How to open and run the Latent Vandalism workshop notebook in Google Colab.">
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #faf9f6;
+    --card-bg: #ffffff;
+    --text: #1c1b19;
+    --text-muted: #5b584f;
+    --accent: #b8471f;
+    --border: #e6e2d8;
+    --step-bg: #f1ede2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171613;
+      --card-bg: #211f1b;
+      --text: #f1ede4;
+      --text-muted: #b7b2a4;
+      --accent: #e08a5e;
+      --border: #38352c;
+      --step-bg: #2a2822;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 16px 96px;
+  }
+  h1 {
+    font-size: 1.8rem;
+    margin: 0 0 8px;
+    line-height: 1.25;
+  }
+  h2 {
+    font-size: 1.3rem;
+    margin: 0 0 12px;
+  }
+  .kicker {
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    margin: 0 0 10px;
+  }
+  .intro {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 36px;
+  }
+  section {
+    margin-bottom: 48px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .colab-button {
+    display: inline-flex;
+    align-items: center;
+    margin: 16px 0 4px;
+  }
+  .colab-button img {
+    height: 41px;
+  }
+  .fallback {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  .fallback summary {
+    cursor: pointer;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.98rem;
+  }
+  .fallback[open] summary {
+    margin-bottom: 12px;
+  }
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 44px 0;
+  }
+  .step {
+    background: var(--step-bg);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .step-number {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: white;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step p {
+    margin: 6px 0 14px;
+    color: var(--text-muted);
+  }
+  .step code {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1px 6px;
+    font-size: 0.92em;
+  }
+  figure {
+    margin: 0;
+  }
+  figure img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+  footer {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: 64px;
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <p class="kicker">Workshop Access</p>
+  <h1>Latent Vandalism: The Joy of Productive Damage to Text-to-Image Synthesis Pipelines</h1>
+  <p class="intro">
+    Welcome! This page has everything you need to open the workshop notebook before we start.
+    It only takes a minute — open the notebook below, and tomorrow we'll go through the
+    permission prompts together.
+  </p>
+
+  <section>
+    <p class="kicker">Before the workshop</p>
+    <h2>1. Open the notebook</h2>
+    <div class="card">
+      <p>Click the button below to open the workshop notebook directly in Google Colab.</p>
+      <a class="colab-button" href="https://colab.research.google.com/drive/1J6XY1VGyc1O8ZMFxwsFd-gLhOE6yVupR" target="_blank" rel="noopener">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
+      </a>
+
+      <details class="fallback">
+        <summary>It didn't open in Colab?</summary>
+        <p>
+          If you land on a plain Google Drive preview screen instead (like the one below) with no
+          "Open with Colaboratory" option, your Google account doesn't have the Colab app connected
+          to Drive yet. Open the file's <strong>"Open with"</strong> menu, choose
+          <strong>"Connect more apps"</strong>, search for <strong>Colaboratory</strong>, and install it.
+          Then reopen the notebook link above.
+        </p>
+        <figure>
+          <img src="assets/install_google_colab.webp" alt="Google Drive file preview with no Colaboratory preview available, showing the Download button">
+        </figure>
+      </details>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <p class="kicker">Tomorrow, in the workshop</p>
+    <h2>2. We'll grant permissions together</h2>
+    <p class="intro" style="margin-bottom: 20px;">
+      Once we start running the notebook, Google will show you a few permission prompts. Grant all
+      of them — the notebook needs Drive access to load the shared models and save your own work.
+      We'll walk through this together, step by step.
+    </p>
+
+    <div class="step">
+      <div class="step-title"><span class="step-number">1</span> "This notebook was not authored by Google"</div>
+      <p>This warning always shows up for notebooks shared outside Google's own gallery — it's expected. Click <strong>Run anyway</strong>.</p>
+      <figure>
+        <img src="assets/this_notebook_was_not_authored_by_google_run_anyway.png" alt="Warning dialog: This notebook was not authored by Google, with a Run anyway button">
+      </figure>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-number">2</span> "Permit this notebook to access your Google Drive files?"</div>
+      <p>Click <strong>Connect to Google Drive</strong>. This is needed to mount your Drive, link the shared model folder, and save your own embeddings.</p>
+      <figure>
+        <img src="assets/permit_this_notebook_to_access_files.png" alt="Dialog asking to permit this notebook to access your Google Drive files, with a Connect to Google Drive button">
+      </figure>
+    </div>
+
+    <div class="step">
+      <div class="step-title"><span class="step-number">3</span> Google sign-in permission screen</div>
+      <p>Pick your Google account, review the requested permissions, and check/allow all of them, then click <strong>Continue</strong>.</p>
+      <figure>
+        <img src="assets/check_all_permissions.webp" alt="Google sign-in screen listing the permissions Google Drive for desktop will have access to, with a Continue button">
+      </figure>
+    </div>
+  </section>
+
+  <footer>
+    See you at the workshop!
+  </footer>
+
+</main>
+</body>
+</html>
