@@ -151,6 +151,18 @@
     text-align: center;
     margin-top: 64px;
   }
+  .tip {
+    background: var(--step-bg);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 18px 0;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+  }
+  .tip strong {
+    color: var(--text);
+  }
 </style>
 </head>
 <body>
@@ -169,9 +181,16 @@
     <h2>1. Open the notebook</h2>
     <div class="card">
       <p>Click the button below to open the workshop notebook directly in Google Colab.</p>
+      <div class="tip">
+        You'll need a Google account to open it. Don't have one? A quick throwaway account works
+        just fine for the workshop.
+      </div>
       <a class="colab-button" href="https://colab.research.google.com/drive/1J6XY1VGyc1O8ZMFxwsFd-gLhOE6yVupR" target="_blank" rel="noopener">
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
       </a>
+      <div class="tip">
+        Once it opens, <strong>bookmark it</strong> so you can find it again quickly tomorrow.
+      </div>
 
       <details class="fallback">
         <summary>It didn't open in Colab?</summary>
@@ -199,6 +218,12 @@
       of them — the notebook needs Drive access to load the shared models and save your own work.
       We'll walk through this together, step by step.
     </p>
+
+    <div class="tip">
+      🖥️ A second screen is handy — I'll walk everyone through the notebook over Zoom, so having
+      the call on one screen and the notebook on the other (or just splitting your screen) makes
+      it easy to follow along side by side.
+    </div>
 
     <div class="step">
       <div class="step-title"><span class="step-number">1</span> "This notebook was not authored by Google"</div>

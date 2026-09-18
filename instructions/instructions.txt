@@ -4,11 +4,20 @@ welcome the participants.
 they should click on the link to the google colab notebook.
 here is the link: https://drive.google.com/file/d/1J6XY1VGyc1O8ZMFxwsFd-gLhOE6yVupR/view?usp=sharing
 
+they need a google account to open it. if they don't have one, they should just create a
+throwaway account.
+
 if they don't have google colab installed, they should install google colab. explain and also put install google_colab.webp
+
+once it opens, they should bookmark the notebook so they can find it again nicely tomorrow.
 
 divider
 
 in the workshop (well do this together tomorrow)
+a second screen for the zoom meeting is recommended, because I will walk them through the
+notebook and so they can just follow and see the instructions side by side. or they can split
+their screen. use an emoji for this one, but not for anything else on the page.
+
 basically they should grant all permissions that pop up
 so first this_notebook_was_not_athored....
 then permit_this_notebook_to_acccess filaments
