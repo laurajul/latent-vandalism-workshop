@@ -37,7 +37,7 @@ def make_handler(image_dir: Path):
             if path in STATIC_FILES:
                 name, content_type = STATIC_FILES[path]
                 return self._serve_file(GALLERY_DIR / name, content_type)
-            if path == "/api/images":
+            if path == "/images.json":
                 return self._serve_image_list()
             if path.startswith("/images/"):
                 return self._serve_image(path[len("/images/"):])

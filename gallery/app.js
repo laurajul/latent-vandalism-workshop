@@ -7,11 +7,11 @@ const lightboxCaption = document.getElementById('lightbox-caption');
 const lightboxClose = document.getElementById('lightbox-close');
 
 function imageUrl(name) {
-  return `/images/${encodeURIComponent(name)}`;
+  return `images/${encodeURIComponent(name)}`;
 }
 
 async function fetchImages() {
-  const res = await fetch('/api/images');
+  const res = await fetch('images.json', { cache: 'no-store' });
   if (!res.ok) throw new Error(`Server error (${res.status})`);
   return res.json();
 }

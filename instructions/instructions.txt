@@ -9,11 +9,14 @@ throwaway account.
 
 if they don't have google colab installed, they should install google colab. explain and also put install google_colab.webp
 
-once it opens, they should bookmark the notebook so they can find it again nicely tomorrow.
+once it opens, they should make an individual copy of the notebook: file --> save a copy in drive.
+the copy opens and that's where they work. embed make_a_copy_to_google_drive.webp.
+
+then they should bookmark their copy so they can find it again nicely on the day.
 
 divider
 
-in the workshop (well do this together tomorrow)
+in the workshop (well do this together on the day)
 a second screen for the zoom meeting is recommended, because I will walk them through the
 notebook and so they can just follow and see the instructions side by side. or they can split
 their screen. use an emoji for this one, but not for anything else on the page.
@@ -24,3 +27,15 @@ then permit_this_notebook_to_acccess filaments
 and then check_all_the_permissions_when adding the folder.
 
 make this a github pages page and create the necessary workflow.
+
+update: everything that happens in the workshop goes into toggles that are closed by default, so it's
+clear they're for later. separate toggles for:
+- schedule: monday september 21st, start at 12:00 liepaja time. about 30 min lecture, 5 min break,
+  then the hands-on session with the colab notebook, and the rest of the roughly 2 hours we discuss
+  the task. results are discussed on thursday.
+- the permissions walkthrough (incl. the second screen tip)
+- the task, "Curious Encounters": document a curious encounter with AI (chatbot, text-to-speech,
+  image generation service, etc. behaving unexpectedly and teaching us something about the model or
+  how it is used/harnessed). screencast, collage, short essay (400 words), short video or any other
+  showcase. presenting time max 3 minutes. upload to https://drive.google.com/drive/folders/1FnFF0Bx1ZKrY58XyIAf0FGpmbAea0VA5?usp=sharing
+  named name_surname.

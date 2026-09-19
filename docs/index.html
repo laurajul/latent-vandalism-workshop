@@ -6,162 +6,197 @@
 <title>Latent Vandalism — Workshop Access</title>
 <meta name="description" content="How to open and run the Latent Vandalism workshop notebook in Google Colab.">
 <link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wdth,wght@75..100,400..800&display=swap">
 <style>
+  /* Design spec: misc/design/design.md — palette §2, tints §3, badges §5, web §7.5 */
   :root {
-    --bg: #faf9f6;
-    --card-bg: #ffffff;
-    --text: #1c1b19;
-    --text-muted: #5b584f;
-    --accent: #b8471f;
-    --border: #e6e2d8;
-    --step-bg: #f1ede2;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #171613;
-      --card-bg: #211f1b;
-      --text: #f1ede4;
-      --text-muted: #b7b2a4;
-      --accent: #e08a5e;
-      --border: #38352c;
-      --step-bg: #2a2822;
-    }
+    color-scheme: light;
+    --coral:      #FF7F50;
+    --crimson:    #DC143C;
+    --maroon:     #800000;
+    --blueviolet: #8A2BE2;
+    --slategray:  #708090;
+    --silver:     #C0C0C0;
+    --gainsboro:  #DCDCDC;
+    --ink:        #1A1A1A;
+    --font: "Noto Sans", "Noto Sans Condensed", system-ui, sans-serif;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
+    background: #fff;
+    color: var(--ink);
+    font-family: var(--font);
+    font-stretch: 87.5%;
+    line-height: 1.5;
   }
   main {
     max-width: 720px;
     margin: 0 auto;
     padding: 48px 16px 96px;
   }
-  h1 {
-    font-size: 1.8rem;
-    margin: 0 0 8px;
+  a { color: var(--blueviolet); text-decoration: underline; }
+  h1, h2, h3 {
+    color: var(--ink);
+    font-weight: 700;
+    font-stretch: 75%;
     line-height: 1.25;
   }
-  h2 {
-    font-size: 1.3rem;
-    margin: 0 0 12px;
+  h1 { font-size: 2rem; margin: 10px 0 12px; }
+  h2 { font-size: 1.4rem; margin: 0 0 12px; }
+  h3 { font-size: 1.15rem; margin: 0 0 8px; }
+  code, .kicker, .step-number, .hint {
+    font-stretch: 75%;
   }
-  .kicker {
-    color: var(--accent);
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-size: 0.78rem;
-    margin: 0 0 10px;
+
+  /* badge treatment: 0.20 tint fill, full-strength border and text, bold */
+  .kicker, code {
+    display: inline-block;
+    padding: 0.1em 0.65em;
+    border: 1px solid var(--slategray);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--slategray) 20%, white);
+    color: var(--slategray);
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
-  .intro {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    margin-bottom: 36px;
+  .kicker { margin: 0 0 10px; }
+  code { font-family: var(--font); }
+
+  .intro { font-size: 1.05rem; margin-bottom: 36px; }
+  section { margin-bottom: 48px; }
+
+  .card, details.toggle {
+    background: #fff;
+    border: 1px solid var(--ink);
+    border-radius: 12px;
   }
-  section {
-    margin-bottom: 48px;
-  }
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px;
-  }
-  .colab-button {
-    display: inline-flex;
-    align-items: center;
-    margin: 16px 0 4px;
-  }
-  .colab-button img {
-    height: 41px;
-  }
+  .card { padding: 28px; }
+
+  .colab-button { display: inline-flex; align-items: center; margin: 16px 0 4px; }
+  .colab-button img { height: 41px; }
+
   .fallback {
     margin-top: 22px;
     padding-top: 18px;
-    border-top: 1px dashed var(--border);
-    color: var(--text-muted);
+    border-top: 1px dashed var(--silver);
     font-size: 0.95rem;
   }
-  .fallback summary {
-    cursor: pointer;
-    color: var(--text);
-    font-weight: 600;
-    font-size: 0.98rem;
+  .fallback summary { cursor: pointer; font-weight: 700; }
+  .fallback[open] summary { margin-bottom: 12px; }
+
+  hr.divider { border: none; border-top: 1px solid var(--gainsboro); margin: 44px 0; }
+
+  /* callout: Coral 0.20 fill, Coral 3 pt left border */
+  .tip {
+    background: color-mix(in srgb, var(--coral) 20%, white);
+    border-left: 3pt solid var(--coral);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 18px 0;
+    font-size: 0.95rem;
   }
-  .fallback[open] summary {
-    margin-bottom: 12px;
-  }
-  hr.divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 44px 0;
-  }
+
   .step {
-    background: var(--step-bg);
-    border-radius: 12px;
+    background: color-mix(in srgb, var(--slategray) 20%, white);
+    border: 1px solid var(--slategray);
+    border-radius: 10px;
     padding: 20px 22px;
     margin-bottom: 18px;
   }
-  .step-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
+  .step-title { display: flex; align-items: center; gap: 10px; font-weight: 700; margin-bottom: 8px; }
+  .step p { margin: 6px 0 14px; }
   .step-number {
     flex: none;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
-    background: var(--accent);
-    color: white;
+    border: 1px solid var(--coral);
+    background: color-mix(in srgb, var(--coral) 20%, white);
+    color: var(--maroon);
+    font-weight: 700;
     font-size: 0.85rem;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .step p {
-    margin: 6px 0 14px;
-    color: var(--text-muted);
-  }
-  .step code {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 1px 6px;
-    font-size: 0.92em;
-  }
-  figure {
-    margin: 0;
-  }
+
+  figure { margin: 0; }
   figure img {
     width: 100%;
     display: block;
     border-radius: 8px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--ink);
   }
+  figure.demo { margin: 0 0 18px; }
+
+  details.toggle { margin-bottom: 14px; }
+  details.toggle > summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 22px;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  details.toggle > summary::-webkit-details-marker { display: none; }
+  details.toggle > summary::before {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    transform: rotate(-45deg);
+    transition: transform 0.15s ease;
+  }
+  details.toggle[open] > summary::before { transform: rotate(45deg); }
+  details.toggle > summary .hint {
+    margin-left: auto;
+    color: var(--slategray);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  details.toggle > .toggle-body { padding: 0 22px 22px; }
+  .toggle-body ul { padding-left: 20px; margin: 8px 0 16px; }
+  .toggle-body li { margin-bottom: 6px; }
+
+  /* schedule: rows divided by Gainsboro hairlines, times in Maroon */
+  .toggle-body .schedule { list-style: none; padding: 0; margin: 12px 0 0; }
+  .toggle-body .schedule li {
+    display: flex;
+    gap: 16px;
+    padding: 12px 0;
+    margin: 0;
+    border-top: 1px solid var(--gainsboro);
+  }
+  .toggle-body .schedule li:first-child { border-top: none; }
+  .schedule .when { flex: none; width: 110px; color: var(--maroon); font-weight: 700; }
+
+  .upload-link {
+    display: inline-block;
+    margin: 4px 0 8px;
+    padding: 0.35em 1.1em;
+    border: 1px solid var(--blueviolet);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--blueviolet) 20%, white);
+    color: var(--blueviolet);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .upload-link:hover { background: color-mix(in srgb, var(--blueviolet) 30%, white); }
+
   footer {
-    color: var(--text-muted);
+    color: var(--slategray);
+    font-weight: 700;
     font-size: 0.85rem;
     text-align: center;
     margin-top: 64px;
-  }
-  .tip {
-    background: var(--step-bg);
-    border-left: 3px solid var(--accent);
-    border-radius: 8px;
-    padding: 12px 16px;
-    margin: 18px 0;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-  }
-  .tip strong {
-    color: var(--text);
   }
 </style>
 </head>
@@ -172,13 +207,14 @@
   <h1>Latent Vandalism: The Joy of Productive Damage to Text-to-Image Synthesis Pipelines</h1>
   <p class="intro">
     Welcome! This page has everything you need to open the workshop notebook before we start.
-    It only takes a minute — open the notebook below, and tomorrow we'll go through the
-    permission prompts together.
+    It only takes a minute — open the notebook below and make your own copy. Everything that
+    happens during the workshop itself is tucked away in the toggles further down; open them
+    when we get there.
   </p>
 
   <section>
     <p class="kicker">Before the workshop</p>
-    <h2>1. Open the notebook</h2>
+    <h2>Open the notebook</h2>
     <div class="card">
       <p>Click the button below to open the workshop notebook directly in Google Colab.</p>
       <div class="tip">
@@ -189,7 +225,15 @@
         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab">
       </a>
       <div class="tip">
-        Once it opens, <strong>bookmark it</strong> so you can find it again quickly tomorrow.
+        Once it opens, <strong>make your own copy</strong> to work in: in the Colab menu choose
+        <strong>File → Save a copy in Drive</strong>. Your copy opens in a new tab, and that's the
+        one you'll work in — so the original stays untouched.
+      </div>
+      <figure class="demo">
+        <img src="assets/make_a_copy_to_google_drive.webp" alt="Screen recording: in Colab, open the File menu and click Save a copy in Drive; the copy opens in a new tab" loading="lazy">
+      </figure>
+      <div class="tip">
+        Then <strong>bookmark your copy</strong> so you can find it again quickly on the day.
       </div>
 
       <details class="fallback">
@@ -211,43 +255,101 @@
   <hr class="divider">
 
   <section>
-    <p class="kicker">Tomorrow, in the workshop</p>
-    <h2>2. We'll grant permissions together</h2>
+    <p class="kicker">On the workshop day</p>
+    <h2>Later — open when we get there</h2>
     <p class="intro" style="margin-bottom: 20px;">
-      Once we start running the notebook, Google will show you a few permission prompts. Grant all
-      of them — the notebook needs Drive access to load the shared models and save your own work.
-      We'll walk through this together, step by step.
+      Nothing in here is needed yet. These are closed on purpose, so it's clear they're for later.
     </p>
 
-    <div class="tip">
-      🖥️ A second screen is handy — I'll walk everyone through the notebook over Zoom, so having
-      the call on one screen and the notebook on the other (or just splitting your screen) makes
-      it easy to follow along side by side.
-    </div>
+    <details class="toggle">
+      <summary>Schedule <span class="hint">September 21 &amp; 24</span></summary>
+      <div class="toggle-body">
+        <h3>Monday, September 21</h3>
+        <p style="margin: 0;">We start at <strong>12:00 Liepāja time</strong> (UTC+3).</p>
+        <ul class="schedule">
+          <li><span class="when">12:00</span><span>Lecture, about 30 minutes</span></li>
+          <li><span class="when">Then</span><span>Short break, 5 minutes</span></li>
+          <li><span class="when">Then</span><span>Hands-on session with the Colab notebook</span></li>
+          <li><span class="when">Then</span><span>The rest of the roughly 2 hours: we discuss the task (see "Curious Encounters")</span></li>
+        </ul>
 
-    <div class="step">
-      <div class="step-title"><span class="step-number">1</span> "This notebook was not authored by Google"</div>
-      <p>This warning always shows up for notebooks shared outside Google's own gallery — it's expected. Click <strong>Run anyway</strong>.</p>
-      <figure>
-        <img src="assets/this_notebook_was_not_authored_by_google_run_anyway.png" alt="Warning dialog: This notebook was not authored by Google, with a Run anyway button">
-      </figure>
-    </div>
+        <h3 style="margin-top: 24px;">Thursday, September 24</h3>
+        <p style="margin: 0;">Again at <strong>12:00 Liepāja time</strong>.</p>
+        <ul class="schedule">
+          <li><span class="when">12:00</span><span>Another lecture, about 30 minutes</span></li>
+          <li><span class="when">Then</span><span>We discuss the results of the task</span></li>
+        </ul>
+      </div>
+    </details>
 
-    <div class="step">
-      <div class="step-title"><span class="step-number">2</span> "Permit this notebook to access your Google Drive files?"</div>
-      <p>Click <strong>Connect to Google Drive</strong>. This is needed to mount your Drive, link the shared model folder, and save your own embeddings.</p>
-      <figure>
-        <img src="assets/permit_this_notebook_to_access_files.png" alt="Dialog asking to permit this notebook to access your Google Drive files, with a Connect to Google Drive button">
-      </figure>
-    </div>
+    <details class="toggle">
+      <summary>In the workshop: granting permissions <span class="hint">we do this together</span></summary>
+      <div class="toggle-body">
+        <p>
+          Once we start running the notebook, Google will show you a few permission prompts. Grant all
+          of them — the notebook needs Drive access to load the shared models and save your own work.
+          We'll walk through this together, step by step.
+        </p>
 
-    <div class="step">
-      <div class="step-title"><span class="step-number">3</span> Google sign-in permission screen</div>
-      <p>Pick your Google account, review the requested permissions, and check/allow all of them, then click <strong>Continue</strong>.</p>
-      <figure>
-        <img src="assets/check_all_permissions.webp" alt="Google sign-in screen listing the permissions Google Drive for desktop will have access to, with a Continue button">
-      </figure>
-    </div>
+        <div class="tip">
+          🖥️ A second screen is handy — I'll walk everyone through the notebook over Zoom, so having
+          the call on one screen and the notebook on the other (or just splitting your screen) makes
+          it easy to follow along side by side.
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-number">1</span> "This notebook was not authored by Google"</div>
+          <p>This warning always shows up for notebooks shared outside Google's own gallery — it's expected. Click <strong>Run anyway</strong>.</p>
+          <figure>
+            <img src="assets/this_notebook_was_not_authored_by_google_run_anyway.png" alt="Warning dialog: This notebook was not authored by Google, with a Run anyway button" loading="lazy">
+          </figure>
+        </div>
+
+        <div class="step">
+          <div class="step-title"><span class="step-number">2</span> "Permit this notebook to access your Google Drive files?"</div>
+          <p>Click <strong>Connect to Google Drive</strong>. This is needed to mount your Drive, link the shared model folder, and save your own embeddings.</p>
+          <figure>
+            <img src="assets/permit_this_notebook_to_access_files.png" alt="Dialog asking to permit this notebook to access your Google Drive files, with a Connect to Google Drive button" loading="lazy">
+          </figure>
+        </div>
+
+        <div class="step" style="margin-bottom: 0;">
+          <div class="step-title"><span class="step-number">3</span> Google sign-in permission screen</div>
+          <p>Pick your Google account, review the requested permissions, and check/allow all of them, then click <strong>Continue</strong>.</p>
+          <figure>
+            <img src="assets/check_all_permissions.webp" alt="Google sign-in screen listing the permissions Google Drive for desktop will have access to, with a Continue button" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </details>
+
+    <details class="toggle">
+      <summary>The task: Curious Encounters <span class="hint">results on Thursday</span></summary>
+      <div class="toggle-body">
+        <h3>Curious Encounters</h3>
+        <p>
+          Document a <strong>curious encounter with AI</strong>: Get an AI system, e.g. an AI chatbot, a
+          text-to-speech system, a speech-to-text system, an image generation service, or anything you like to behave in a way
+          that is unexpected or use it in a way that it was not designed for. Reflect on what this encounter can tell us about the model or the service it was placed into itself.
+        </p>
+
+        <p><strong>How to document it however you like:</strong></p>
+        <ul>
+          <li>a screencast</li>
+          <li>a collage</li>
+          <li>a short essay</li>
+          <li>a short video</li>
+          <li>or any other showcase that comes to mind</li>
+        </ul>
+
+        <p><strong>Presenting time: 3 minutes max.</strong></p>
+
+        <p><strong>Hand it in</strong> by putting it into this shared folder, named <code>name_surname</code>:</p>
+        <a class="upload-link" href="https://drive.google.com/drive/folders/1FnFF0Bx1ZKrY58XyIAf0FGpmbAea0VA5?usp=sharing" target="_blank" rel="noopener">Open the upload folder</a>
+
+        <p style="margin-bottom: 0;">We'll discuss the results on Thursday.</p>
+      </div>
+    </details>
   </section>
 
   <footer>
